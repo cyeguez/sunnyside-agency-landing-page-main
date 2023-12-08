@@ -19,18 +19,26 @@
   <div class="container">
     <header>
       <p class="logo">Sunnyside</p>
-      <nav>
-        <img src="./src/images/icon-hamburger.svg" alt="icon menu">
-        <ul class="nav__menu">
-          <li class="link">About</li>
-          <li class="link">Services</li>
-          <li class="link">Projects</li>
-          <li class="link">Contact</li>
-        </ul>
-      </nav>
+      <img src="./src/images/icon-hamburger.svg" alt="icon menu" class="icon-menu">
     </header>
+    <nav>
+      <ul class="nav__menu">
+        <li class="link">About</li>
+        <li class="link">Services</li>
+        <li class="link">Projects</li>
+        <li class="link">Contact</li>
+        <div class="triangule"></div>
+      </ul>
+    </nav>
 
-    <h1 class="title">We are creatives</h1>
+    <div class="wrapper">
+      <h1 class="title">We are creatives</h1>
+      <svg width="36" height="114" xmlns="http://www.w3.org/2000/svg" class="icon-arrow">
+        <g stroke="#FFF" stroke-width="6" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 3v100M3 95.484l15 15 15-15" />
+        </g>
+      </svg>
+    </div>
   </div>
 
   <main>
@@ -47,38 +55,31 @@
 
       <article class="article">
         <h2 class="article__title">Transform your brand</h2>
-
-        <p class="article__descrit">
+        <p class="article__description">
           We are a full-service creative agency specializing in helping brands grow fast.
           Engage your clients through compelling visuals that do most of the marketing for you.
         </p>
-
         <a href="#" class="article__lear-more">Learn more</a>
-
       </article>
+      
       <div class="section-image">
         <picture>
           <source media="(min-width:768px)" srcset="./src/images/desktop/image-stand-out.jpg">
           <source media="(max-width:767px)" srcset="./src/images/mobile/image-stand-out.jpg">
           <img src="./src/images/mobile/image-stand-out.jpg" alt="image cup">
-
         </picture>
       </div>
 
       <article class="article">
         <h2 class="article__title">Stand out to the right audience</h2>
-
-        <p class="article__descrit">
+        <p class="article__description">
           Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll
           build and extend your brand in digital places.
         </p>
-
         <a href="#" class="article__lear-more">Learn more</a>
       </article>
 
       <article class="article--frut graphic">
-
-
         Graphic design
         Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential
         clients’ attention.
@@ -87,9 +88,7 @@
       <article class="article--frut photography">
         Photography
         Increase your credibility by getting the most stunning, high-quality photos that improve your business image.
-
       </article>
-
     </div>
   </main>
 
@@ -161,7 +160,7 @@
         <img src="./src/images/mobile/image-gallery-cone.jpg" alt="Cone ice cream">
 
       </picture>
-      
+
     </div>
     <div class="images-group__item">
 
