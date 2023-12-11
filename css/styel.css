@@ -91,14 +91,75 @@
 .sections .article {
   height: 21.375rem;
   padding-inline: 1.4375rem;
-  border: 1px solid red;
   margin-top: 55px;
 }
 .sections .article__title {
+  width: 60%;
+  margin: 55px auto 30px auto;
+  text-align: center;
   font-size: 1.3125em;
   font-weight: 900;
   color: hsl(198, 62%, 26%);
+  font-family: "Fraunces", serif;
 }
+.sections .article__description {
+  line-height: 1.5rem;
+  text-align: center;
+  font-size: 0.875;
+  margin-bottom: 30px;
+}
+.sections .article__learn-more {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: "Fraunces", serif;
+  color: hsl(198, 62%, 26%);
+  position: relative;
+}
+.sections .article__learn-more .resalt {
+  position: absolute;
+  left: 50px;
+  top: 10px;
+  width: 200px;
+  height: 15px;
+  background-color: hsl(51, 100%, 49%);
+  border-radius: 5px;
+  z-index: -1;
+}
+.sections .article__learn-more .resalt--pink {
+  background-color: hsl(7, 99%, 70%);
+}
+.sections .frut {
+  width: 100%;
+  height: 470px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: hsl(212, 27%, 19%);
+  padding-inline: 20px;
+}
+.sections .frut__title {
+  margin-top: 317px;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+.sections .frut__text {
+  width: 95%;
+  font-size: 0.875em;
+  text-align: center;
+  margin: 0 auto;
+}
+.sections .frut--graphic {
+  background-image: url("../src/images/mobile/image-graphic-design.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sections .frut--photography {
+  background-image: url("../src/images/mobile/image-photography.jpg");
+}
+
 .attribution {
   font-size: 11px;
 }
@@ -149,9 +210,11 @@ img, picture, video, iframe, figure {
   width: 100%;
   display: block;
   /* (Opcional) */
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   /* (Opcional) */
-  object-position: center center;
+  -o-object-position: center center;
+     object-position: center center;
 }
 
 /* Reseteamos los enlaces para funcionar como cajas... */
@@ -193,6 +256,10 @@ blockquote:before, blockquote:after, q:before, q:after {
 }
 
 /* (Opcional) Configuramos el texto que seleccionamos */
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
 ::selection {
   background-color: var(--negro);
   color: var(--blanco);
@@ -202,12 +269,15 @@ blockquote:before, blockquote:after, q:before, q:after {
 form, input, textarea, select, button, label {
   font-family: inherit;
   font-size: inherit;
-  hyphens: auto;
+  -webkit-hyphens: auto;
+          hyphens: auto;
   background-color: transparent;
   color: inherit;
   display: block;
   /* (Opcional) */
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 /* Reseteamos las tablas */
@@ -235,4 +305,4 @@ body {
   -webkit-font-smoothing: antialiased;
   /* (Opcional) */
   -moz-osx-font-smoothing: grayscale;
-}
+}/*# sourceMappingURL=styel.css.map */
