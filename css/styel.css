@@ -80,20 +80,20 @@
   margin-top: 25px;
 }
 
-.sections {
+main .sections {
   display: grid;
   grid-template-columns: 1fr;
 }
-.sections .section-image {
+main .sections .section-image {
   width: 100%;
   height: 15.1875rem;
 }
-.sections .article {
+main .sections .article {
   height: 21.375rem;
   padding-inline: 1.4375rem;
   margin-top: 55px;
 }
-.sections .article__title {
+main .sections .article__title {
   width: 60%;
   margin: 55px auto 30px auto;
   text-align: center;
@@ -102,13 +102,13 @@
   color: hsl(198, 62%, 26%);
   font-family: "Fraunces", serif;
 }
-.sections .article__description {
+main .sections .article__description {
   line-height: 1.5rem;
   text-align: center;
   font-size: 0.875;
   margin-bottom: 30px;
 }
-.sections .article__learn-more {
+main .sections .article__learn-more {
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
@@ -116,56 +116,144 @@
   color: hsl(198, 62%, 26%);
   position: relative;
 }
-.sections .article__learn-more .resalt {
+main .sections .article__learn-more::before {
   position: absolute;
-  left: 50px;
-  top: 10px;
-  width: 200px;
-  height: 15px;
+  content: "";
+  width: 130px;
+  height: 10px;
   background-color: hsl(51, 100%, 49%);
-  border-radius: 5px;
+  right: 28%;
+  top: 12px;
   z-index: -1;
+  border-radius: 20px;
 }
-.sections .article__learn-more .resalt--pink {
+main .sections .article__learn-more--red::before {
   background-color: hsl(7, 99%, 70%);
 }
-.sections .frut {
-  width: 100%;
+main .sections .frut {
   height: 470px;
   background-repeat: no-repeat;
   background-size: cover;
   color: hsl(212, 27%, 19%);
   padding-inline: 20px;
+  font-weight: 700;
+  margin: 0 auto;
 }
-.sections .frut__title {
-  margin-top: 317px;
+main .sections .frut__title {
+  margin-top: 316px;
   text-align: center;
   font-size: 1.5em;
   font-family: "Fraunces", serif;
   font-weight: 900;
   margin-bottom: 30px;
 }
-.sections .frut__text {
-  width: 95%;
+main .sections .frut__text {
+  width: 92%;
   font-size: 0.875em;
   text-align: center;
   margin: 0 auto;
+  line-height: 1.5rem;
 }
-.sections .frut--graphic {
+main .sections .frut--graphic {
   background-image: url("../src/images/mobile/image-graphic-design.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
-.sections .frut--photography {
+main .sections .frut--photography {
   background-image: url("../src/images/mobile/image-photography.jpg");
 }
-
-.attribution {
-  font-size: 11px;
+main .testimonial {
+  color: hsl(213, 9%, 39%);
 }
-.attribution a {
-  color: hsl(228, 45%, 44%);
+main .testimonial__title {
+  margin-top: 53px;
   text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: "Fraunces", serif;
+  font-size: 0.875em;
+}
+main .testimonial__container {
+  padding-inline: 20px;
+}
+main .testimonial__container__description img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 53px auto 30px auto;
+}
+main .testimonial__container__description__text {
+  text-align: center;
+  width: 92%;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.5em;
+}
+main .testimonial__container__description__author {
+  margin-top: 30px;
+  text-align: center;
+  color: hsl(212, 27%, 19%);
+  font-weight: 900;
+  font-family: "Fraunces", serif;
+  line-height: 1.5rem;
+}
+main .testimonial__container__description__author .description__author__employment {
+  font-size: 0.75em;
+  color: hsl(210, 4%, 67%);
+  font-weight: 700;
+  font-family: "Barlow", sans-serif;
+}
+main .images-group {
+  height: 296px;
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+main .images-group__item {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center -25px;
+}
+main .images-group .milk {
+  background-image: url("../src/images/mobile/image-gallery-milkbottles.jpg");
+}
+main .images-group .orange {
+  background-image: url("../src/images/mobile/image-gallery-orange.jpg");
+}
+main .images-group .cone {
+  background-image: url("../src/images/mobile/image-gallery-cone.jpg");
+}
+main .images-group .cube {
+  background-image: url("../src/images/mobile/image-gallery-sugar-cubes.jpg");
+}
+
+.footer {
+  height: 275px;
+  background-color: hsl(167, 44%, 70%);
+}
+.footer__title {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 1.688em;
+  font-family: "Barlow", sans-serif;
+  font-weight: 900;
+  color: hsl(212, 27%, 19%);
+}
+.footer__links {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1em;
+  color: hsl(167, 44%, 70%);
+  margin-bottom: 70px;
+}
+.footer .socials {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.footer .socials img {
+  width: 17px;
+  height: 17px;
 }
 
 /* Definimos las Custom properties */

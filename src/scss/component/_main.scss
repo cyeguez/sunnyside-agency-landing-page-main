@@ -1,93 +1,171 @@
 @use "../base/var" as v;
-.sections {
-  display: grid;
-  grid-template-columns: 1fr;
+main {
+  .sections {
+    display: grid;
+    grid-template-columns: 1fr;
 
-  .section-image {
-    width: 100%;
-    height: 15.1875rem;
-  }
-
-  .article {
-    height: 21.375rem;
-    padding-inline: 1.4375rem;
-    margin-top: 55px;
-
-    &__title {
-      width: 60%;
-      margin: 55px auto 30px auto;
-      text-align: center;
-      font-size: 1.3125em;
-      font-weight: 900;
-      color: v.$Dark-blue;
-      font-family: v.$font2;
+    .section-image {
+      width: 100%;
+      height: 15.1875rem;
     }
 
-    &__description {
-      line-height: 1.5rem;
-      text-align: center;
-      font-size: 0.875;
-      margin-bottom: 30px;
-    }
+    .article {
+      height: 21.375rem;
+      padding-inline: 1.4375rem;
+      margin-top: 55px;
 
-    &__learn-more {
-      text-align: center;
-      text-transform: uppercase;
-      font-weight: 900;
-      font-family: v.$font2;
-      color: v.$Dark-blue;
-      position: relative;
+      &__title {
+        width: 60%;
+        margin: 55px auto 30px auto;
+        text-align: center;
+        font-size: 1.3125em;
+        font-weight: 900;
+        color: v.$Dark-blue;
+        font-family: v.$font2;
+      }
 
-      .resalt {
-        position: absolute;
-        left: 50px;
-        top: 10px;
-        width: 200px;
-        height: 15px;
-        background-color: v.$Yellow;
-        border-radius: 5px;
-        z-index: -1;
+      &__description {
+        line-height: 1.5rem;
+        text-align: center;
+        font-size: 0.875;
+        margin-bottom: 30px;
+      }
 
-        &--pink {
-          background-color: v.$Soft-red;
+      
+
+      &__learn-more {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-family: v.$font2;
+        color: v.$Dark-blue;
+        position: relative;
+
+        &::before{
+          position: absolute;
+          content: '';
+          width: 130px;
+          height: 10px;
+          background-color: v.$Yellow;
+          right: 28%;
+          top: 12px;
+          z-index: -1;
+          border-radius: 20px;
         }
+        &--red::before{
+          background-color: v.$Soft-red;
+          
+        }
+      }
+    }
+
+    .frut {
+      
+      height: 470px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: v.$Very-dark-desaturated-blue;
+      padding-inline: 20px;
+      font-weight: 700;
+      margin: 0 auto;
+
+      &__title {
+        margin-top: 316px;
+        text-align: center;
+        font-size: 1.5em;
+        font-family: v.$font2;
+        font-weight: 900;
+        margin-bottom: 30px;
+      }
+
+      &__text {
+        width: 92%;
+        font-size: 0.875em;
+        text-align: center;
+        margin: 0 auto;
+        line-height: 1.5rem;
+      }
+
+      &--graphic {
+        background-image: url("../src/images/mobile/image-graphic-design.jpg");
+      }
+
+      &--photography {
+        background-image: url("../src/images/mobile/image-photography.jpg");
       }
     }
   }
 
-  .frut {
-    width: 100%;
-    height: 470px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: v.$Very-dark-desaturated-blue;
-    padding-inline:20px;
+  .testimonial {
+    color: v.$Very-dark-grayish-blue;
 
-    &__title{
-      margin-top:317px ;
+    &__title {
+      margin-top: 53px;
       text-align: center;
-      font-size: 1.5em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       font-family: v.$font2;
-      font-weight: 900;
-      margin-bottom: 30px;
+      font-size: 0.875em;
     }
+    &__container {
+      padding-inline: 20px;
+      &__description {
+        img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          margin: 53px auto 30px auto;
+        }
+        &__text {
+          text-align: center;
+          width: 92%;
+          font-size: 1em;
+          font-weight: 700;
+          line-height: 1.5em;
+        }
+        &__author {
+          margin-top: 30px;
+          text-align: center;
+          color: v.$Very-dark-desaturated-blue;
+          font-weight: 900;
+          font-family: v.$font2;
+          line-height: 1.5rem;
 
-    &__text{
-      width: 95%;
-      font-size:0.875em ;
-      text-align: center;	
-      margin: 0 auto;
-     
+          .description__author__employment {
+            font-size: 0.75em;
+            color: v.$Grayish-blue;
+            font-weight: 700;
+            font-family: v.$font1;
+          }
+        }
+      }
     }
+  }
+  .images-group {
+   
+    height: 296px;
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 
-    &--graphic {
-      background-image: url("../src/images/mobile/image-graphic-design.jpg");
+    &__item {
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center -25px;
     }
 
-    &--photography {
-      background-image: url("../src/images/mobile/image-photography.jpg");
+    .milk {
+      background-image: url("../src/images/mobile/image-gallery-milkbottles.jpg");
+    }
+    .orange {
+      background-image: url("../src/images/mobile/image-gallery-orange.jpg");
+    }
+    .cone {
+      background-image: url("../src/images/mobile/image-gallery-cone.jpg");
+    }
+    .cube {
+      background-image: url("../src/images/mobile/image-gallery-sugar-cubes.jpg");
     }
   }
 }
