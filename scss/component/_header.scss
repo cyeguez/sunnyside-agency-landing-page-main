@@ -26,6 +26,7 @@
     background-color: var( --White);
     position: relative;
     @include m.flex(column, no-wrap, flex-start, center);
+    transition: opacity 500ms ease-in-out;
    
     &:before{
       position: absolute;
@@ -38,15 +39,15 @@
       border-bottom: 24px solid var(--White);
       }
     .links{
-      border: 1px solid blue;
       @include m.flex(column, no-wrap, flex-start, center);
       gap: 2rem;
       padding-block: 2.8125rem 2.3125rem;
       cursor: pointer;
       
       .link{
+        transition: transform 0.3s ease-in-out;
         &:hover{
-          font-size: 1.25rem;
+          transform: scale(1.2);
           
         }
        
@@ -64,5 +65,21 @@
       
     }
     
+  }
+
+  &__title{
+    width: 60%;
+    border: 1px solid red;
+    position: fixed;
+    top: 200px;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    color: var(--White);
+    font-size: 1.875em;
+    font-weight: 900;
+    font-family: var(--font2);
+    text-transform: uppercase;
   }
 }

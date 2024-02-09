@@ -1,0 +1,6 @@
+.hidden{
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  transition: visibility 600ms ease-in-out;
+}

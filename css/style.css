@@ -17,11 +17,9 @@
   font-size: 18px;
 }
 .header .brand {
-  width: -moz-fit-content;
   width: fit-content;
 }
 .header .icon-menu {
-  width: -moz-fit-content;
   width: fit-content;
 }
 .header .nav {
@@ -33,6 +31,7 @@
   flex-flow: column no-wrap;
   justify-content: flex-start;
   align-items: center;
+  transition: opacity 500ms ease-in-out;
 }
 .header .nav:before {
   position: absolute;
@@ -45,7 +44,6 @@
   border-bottom: 24px solid var(--White);
 }
 .header .nav .links {
-  border: 1px solid blue;
   display: flex;
   flex-direction: column;
   flex-flow: column no-wrap;
@@ -55,14 +53,32 @@
   padding-block: 2.8125rem 2.3125rem;
   cursor: pointer;
 }
+.header .nav .links .link {
+  transition: transform 0.3s ease-in-out;
+}
 .header .nav .links .link:hover {
-  font-size: 1.25rem;
+  transform: scale(1.2);
 }
 .header .nav .links .btn {
   background-color: var(--Yellow);
   padding: 1rem 2rem;
   border-radius: 50px;
   font-weight: 600;
+  text-transform: uppercase;
+}
+.header__title {
+  width: 60%;
+  border: 1px solid red;
+  position: fixed;
+  top: 200px;
+  text-align: center;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  color: var(--White);
+  font-size: 1.875em;
+  font-weight: 900;
+  font-family: var(--font2);
   text-transform: uppercase;
 }
 
@@ -187,7 +203,6 @@
   margin-bottom: 0;
 }
 .main__container .modal__container-titles svg {
-  width: -moz-fit-content;
   width: fit-content;
 }
 .main__container .modal__parraf {
@@ -293,7 +308,6 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(0, 0, 0, 0.2);
 }
 .main__container .modal-success__icon-check {
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto 1.6875rem auto;
 }
@@ -363,7 +377,6 @@
     cursor: pointer;
   }
   .main__container .section1__container-buttons__bookmark .icon-bookmark {
-    width: -moz-fit-content;
     width: fit-content;
   }
   .main__container .section1__container-buttons__bookmark .icon-bookmark circle:hover {
@@ -440,12 +453,10 @@
     font-size: 1em;
   }
   .main__container .section3__card__price {
-    width: -moz-fit-content;
     width: fit-content;
     font-size: 2em;
   }
   .main__container .section3__card a {
-    width: -moz-fit-content;
     width: fit-content;
   }
   .main__container .modal {
@@ -465,7 +476,6 @@
     font-weight: 700;
   }
   .main__container .modal__container-titles svg {
-    width: -moz-fit-content;
     width: fit-content;
   }
   .main__container .modal__parraf {
@@ -561,7 +571,6 @@
     margin: 0 auto;
   }
   .main__container .modal-success__icon-check {
-    width: -moz-fit-content;
     width: fit-content;
     margin: 0 auto 1.6875rem auto;
   }
@@ -634,11 +643,9 @@ figure {
   width: 100%;
   display: block;
   /* (Opcional) */
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   /* (Opcional) */
-  -o-object-position: center center;
-     object-position: center center;
+  object-position: center center;
 }
 
 /* Reseteamos los enlaces para funcionar como cajas... */
@@ -697,10 +704,6 @@ q:after {
 }
 
 /* (Opcional) Configuramos el texto que seleccionamos */
-::-moz-selection {
-  background-color: var(--negro);
-  color: var(--blanco);
-}
 ::selection {
   background-color: var(--negro);
   color: var(--blanco);
@@ -715,15 +718,12 @@ button,
 label {
   font-family: inherit;
   font-size: inherit;
-  -webkit-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   background-color: transparent;
   color: inherit;
   display: block;
   /* (Opcional) */
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 /* Reseteamos las tablas */
@@ -769,4 +769,11 @@ body {
   --White:hsl(0, 0%, 100%);
   --font1: "Barlow", sans-serif;
   --font2: "Fraunces", serif;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  transition: visibility 600ms ease-in-out;
+}
