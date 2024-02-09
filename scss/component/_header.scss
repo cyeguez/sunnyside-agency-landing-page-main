@@ -1,0 +1,6 @@
+@use "../base/mixins" as m;
+
+.header {
+  width: min(100%, 375px);
+  @include m.flex(row, wrap, space-between, center);
+}
