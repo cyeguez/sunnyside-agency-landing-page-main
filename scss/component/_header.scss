@@ -2,5 +2,67 @@
 
 .header {
   width: min(100%, 375px);
-  @include m.flex(row, wrap, space-between, center);
+  height: 537px;
+  padding: 1.5rem 1rem 0 1rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  @include m.flex(row, wrap, space-between, flex-start);
+  background-image: url('../images/mobile/image-header.jpg');
+  font-size: 18px;
+
+  .brand{
+    width: fit-content;
+    
+  }
+
+  .icon-menu{
+    width: fit-content;
+  }
+
+  .nav{
+    
+    width: 100%;    
+    background-color: var( --White);
+    position: relative;
+    @include m.flex(column, no-wrap, flex-start, center);
+   
+    &:before{
+      position: absolute;
+      content: " ";
+      top: -23px;
+      right: 0;
+      width:  0;
+      height: 0;
+      border-left: 24px solid transparent;
+      border-bottom: 24px solid var(--White);
+      }
+    .links{
+      border: 1px solid blue;
+      @include m.flex(column, no-wrap, flex-start, center);
+      gap: 2rem;
+      padding-block: 2.8125rem 2.3125rem;
+      cursor: pointer;
+      
+      .link{
+        &:hover{
+          font-size: 1.25rem;
+          
+        }
+       
+      }
+      
+
+      .btn{
+        background-color: var(--Yellow);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-transform: uppercase;
+
+      }
+      
+    }
+    
+  }
 }
