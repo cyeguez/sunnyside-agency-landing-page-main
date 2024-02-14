@@ -1,9 +1,9 @@
 const menu = document.querySelector(".icon-menu");
 const nav = document.querySelector(".nav");
 const title = document.querySelector(".header__title");
+const social = document.querySelector(".footer__social");
+const iconSocials = social.querySelectorAll("svg");
 
-
-console.log(iconSocials);
 
 menu.addEventListener("click", () => {
   nav.classList.toggle("hidden");
