@@ -1,556 +1,390 @@
 @use "../base/mixins" as m;
 .main {
-  position: relative;
-  &__container {
+  .main__container {
     width: min(100%, 375px);
     margin: 0 auto;
-    min-height: 10vh;
-    padding: 1.875rem 1.5rem;
 
-    .section1 {
-      margin-top: -80px;
-      position: relative;
+    &__section1 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 247px auto 247px 345px 475px 475px;
 
-      &__branch {
-        position: absolute;
-        top: -30px;
-        left: calc(50% - 1.5rem);
-      }
-
-      &__title {
-        width: 60%;
-        margin: 57px auto 1.5rem auto;
-        font-size: 1em;
-        text-align: center;
-        font-weight: 700;
-        color: var(--Black);
-      }
-
-      &__text {
-        font-size: 0.8125em;
-        text-align: center;
-        line-height: 1.5rem;
-      }
-
-      &__container-buttons {
-        @include m.flex(row, no-wrap, space-between, center);
-        margin-top: 1.5rem;
-
-        &__bookmark {
-          @include m.flex(row, no-wrap, space-between, center);
-
-          .icon-bookmark {
-            & circle:hover {
-              fill: var(--Dark-gray);
-            }
-
-            &:hover {
-              cursor: pointer;
-            }
-          }
-
-          .bookmark__text {
-            display: none;
-          }
-        }
-      }
-    }
-
-    .section2 {
-      &__numbers {
-        &__item {
-          text-align: center;
-          color: var(--Black);
-
-          .cifra {
-            font-size: 2em;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-          }
-
-          .divider {
-            width: 84px;
-            height: 1px;
-            background-color: var(--Gray);
-            margin: 1.5rem auto;
-          }
-        }
-      }
-
-      .section2__bar-progress {
-        width: 100%;
-        height: 1rem;
-        border-radius: 8px;
-      }
-
-      progress::-webkit-progress-bar {
-        width: 100%;
-        background-color: var(--Gray);
-        border-radius: 8px;
-      }
-      progress::-webkit-progress-value {
-        background-color: var(--Moderate-cyan);
-        border-radius: 8px;
-      }
-    }
-
-    .section3 {
-      &__card {
-        &__price {
-          font-size: 1.5em;
-          color: var(--Black);
-          font-weight: 700;
-          margin-bottom: 1.875rem;
-
-          &--text {
-            font-size: 0.8125em;
-            font-weight: 500;
-            color: var(--Dark-gray);
-          }
-        }
-      }
-    }
-    .modal {
-      width: calc(375px - 3rem);
-      position: fixed;
-      top: 100px;
-      bottom: 0;
-      overflow-y: auto;
-      border-radius: 8px;
-      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2),
-        -1px -1px 2px rgba(0, 0, 0, 0.2);
-
-      @include m.flex(row, wrap, space-between, center);
-
-      &__container-titles {
-        width: 100%;
-        @include m.flex(row, no-wrap, space-between, center);
+      .section1__card {
+        padding: 3.625rem 1.5rem 0 1.5rem;
 
         &__title {
-          margin-bottom: 0;
+          width: 70%;
         }
-        svg {
-          width: fit-content;
-        }
-      }
-
-      &__parraf {
-        margin-top: 2rem;
-        width: 100%;
-        text-align: left;
-        font-size: 0.8125em;
-      }
-
-      &__card {
-        position: relative;
-        &__container-select {
-          margin-block: 1.5rem 1.875rem;
-          @include m.flex(row, no-wrap, flex-start, center);
-          gap: 1rem;
-
-          input {
-            cursor: pointer;
-
-            &:checked {
-              background-color: var(--Moderate-cyan);
-              accent-color: var(--Moderate-cyan);
-            }
-          }
-
-          label {
-            color: var(--Black);
-            font-weight: 700;
-            line-height: 1.5rem;
-            cursor: pointer;
-            white-space: pre-line;
-
-            span {
-              color: var(--Moderate-cyan);
-            }
-          }
-        }
-
-        &__text {
-          font-size: 0.8125em;
-          line-height: 1.5rem;
-          margin-bottom: 2rem;
-        }
-
-        &__price {
-          color: var(--Black);
+        &__parraf {
           font-weight: 700;
-          font-size: 0.875em;
-
-          &--text {
-            color: var(--Dark-gray);
-          }
+          text-align: center;
+          line-height: 1.5rem;
+          font-family: var(--font1);
+          color: var(--Very-dark-desaturated-blue);
         }
 
-        &__container-buttons {
-          @include m.flex(row, wrap, space-evenly, center);
-          margin: -1.5rem;
-          padding-top: 3rem;
-          padding-bottom: 1.5rem;
-          border-top: 1px solid var(--Gray);
+        &__article {
+          text-align: center;
+          margin-top: 2rem;
+          text-transform: uppercase;
+          font-weight: 900;
+          column-rule: var(--Very-dark-desaturated-blue);
+          font-family: var(--font2);
+          padding-bottom: 3.375rem;
+          position: relative;
+          z-index: 1;
 
-          hr {
-            width: 100%;
-            height: 2px;
-            background-color: var(--Gray);
-            margin-bottom: 1.5rem;
-          }
-
-          p {
-            width: 100%;
-
-            text-align: center;
-            margin-bottom: 1.5rem;
-          }
-
-          .input-num {
-            width: 117px;
-            height: 51px;
-            padding-left: 2rem;
-            border: 1px solid var(--Gray);
+          &::after {
+            content: "";
+            width: 130px;
+            height: 10px;
+            background-color: transparent;
             border-radius: 50px;
-            text-align: center;
-            color: var(--Dark-gray);
-            font-weight: 700;
-            background-image: url("../images/dollar.svg");
-            background-repeat: no-repeat;
-            background-position: 0.5rem 0.7rem;
+            position: absolute;
+            top: 12px;
+            left: 90px;
+            opacity: 0.3;
+          }
 
-            &:focus {
-              outline: none;
+          &:hover::after{
+            cursor: pointer;
+            opacity: 1;
+            z-index: -1;
+            
+          }
+          &.yellow::after {
+            background-color: var(--Yellow);
+          }
+          &.pink::after {
+            background-color: var(--Soft-red);
+          }
+        }
+      }
+
+      .section1__card--frut {
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        object-fit: cover;
+      }
+      .section1__card--egg {
+        grid-row: 1/2;
+        background-image: url(../images/mobile/image-transform.jpg);
+        background-size: cover;
+      }
+      .section1__card--wine {
+        grid-row: 3/4;
+        background-image: url(../images/mobile/image-stand-out.jpg);
+        background-size: cover;
+        background-position: center center;
+      }
+      .section1__card--frut {
+        @include m.flex(column, no-wrap, flex-end, center);
+
+        &__wrap {
+          text-align: center;
+          padding-inline: 1rem;
+          padding-top: 4.875rem;
+
+          &__title {
+            color: var(--Dark-moderate-cyan);
+          }
+
+          .wrap__text {
+            font-size: 0.875em;
+            font-family: var(--font1);
+            font-weight: normal;
+            margin-bottom: 3.125rem;
+            line-height: 1.5rem;
+          }
+        }
+      }
+
+      .cherry {
+        grid-row: 5/6;
+        background-image: url(../images/mobile/image-graphic-design.jpg);
+      }
+
+      .orange {
+        grid-row: 6/7;
+        background-image: url(../images/mobile/image-photography.jpg);
+      }
+    }
+
+    &__section2 {
+      &__title {
+        text-transform: uppercase;
+        padding-top: 3.125rem;
+        margin-bottom: 2.625rem;
+        text-align: center;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: var(--Very-dark-grayish-blue);
+      }
+
+      &__testimonials {
+        .testimonial {
+          padding-inline: 2rem;
+          margin-bottom: 3.125rem;
+          @include m.flex(column, no-wrap, flex-start, center);
+          .wrap-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 2rem;
+
+            img {
+              border-radius: 50%;
+            }
+          }
+
+          &__description {
+            text-align: center;
+            font-family: var(--font1);
+            font-weight: 600;
+            margin-bottom: 2rem;
+          }
+
+          &__author {
+            text-align: center;
+
+            &__name {
+              font-family: var(--font2);
+              font-weight: 900;
+              margin-bottom: 0.75rem;
+            }
+
+            &__job {
+              font-family: var(--font1);
+              color: var(--Very-dark-grayish-blue);
             }
           }
         }
       }
     }
 
-    .modal-success {
-      height: 23.9375rem;
-      border-radius: 8px;
-      @include m.flex(column, no-wrap, flex-start, center);
-      position: fixed;
-      position: fixed;
-      top: 80px;
-      left: 2rem;
-      right: 2rem;
-      bottom: 0;
+    &__section3 {
+      width: 100%;
+      height: 296px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
 
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2),
-        -2px -2px 4px rgba(0, 0, 0, 0.2);
-
-      &__icon-check {
-        width: fit-content;
-        margin: 0 auto 1.6875rem auto;
+      .gallery {
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
 
-      &__title {
-        width: 100%;
-        font-size: 18px;
-        text-align: center;
-        font-weight: 700;
-        color: var(--Black);
-        margin-bottom: 1.75rem;
+      .milk {
+        background-image: url("../images/mobile/image-gallery-milkbottles.jpg");
       }
 
-      &__text {
-        margin-inline: -1.5rem;
-        text-align: center;
-        font-size: 0.75em;
-        line-height: 1.5rem;
-        margin-bottom: 2rem;
-        padding-inline: 1rem;
+      .orange {
+        background-image: url("../images/mobile/image-gallery-orange.jpg");
+      }
+
+      .cone {
+        background-image: url("../images/mobile/image-gallery-cone.jpg");
+      }
+
+      .sugar {
+        background-image: url("../images/mobile/image-gallery-sugar-cubes.jpg");
       }
     }
   }
 }
 
-// MODO DESKTOP
-
+// Mode Desktop
 @media screen and (min-width: 768px) {
   .main {
-    &__container {
-      width: 740px;
+    .main__container {
+      width: min(100%, 1440px);
       margin: 0 auto;
-      min-height: 10vh;
-      padding: 1.875rem 1.5rem;
-      position: relative;
 
-      .section1 {
-        margin-top: -80px;
-        position: relative;
+      &__section1 {
+        display: grid;
+        grid-template-columns: repeat(2, 720px);
+        grid-template-rows: repeat(3, 593px);
 
-        &__branch {
-          position: absolute;
-          top: -30px;
-          left: calc(50% - 1.5rem);
-        }
+        .section1__card {
+          @include m.flex(column, no-wrap, center, flex-start);
+          padding-left: 20%;
 
-        &__title {
-          width: 60%;
-          margin: 57px auto 1.5rem auto;
-          font-size: 1em;
-          text-align: center;
-          font-weight: 700;
-          color: var(--Black);
-        }
-
-        &__text {
-          font-size: 1em;
-          
-        }
-
-        &__container-buttons {
-          @include m.flex(row, no-wrap, space-between, center);
-          margin-top: 1.5rem;
-
-          &__bookmark {
-            width: 193px;
-            @include m.flex(row, no-wrap, flex-start, center);
-            gap: 1rem;
-            background-color: var(--Gray);
-            border-radius: 50px;
-            cursor: pointer;
-
-            .icon-bookmark {
-              width: fit-content;
-              & circle:hover {
-                fill: var(--Dark-gray);
-              }
-
-              &:hover {
-                cursor: pointer;
-              }
-            }
-
-            .bookmark__text {
-              display: inline;
-              font-weight: 700;
-
-              &--active {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-
-      .section2 {
-        &__numbers {
-          display: grid;
-          grid-template-columns: 200px 230px 1fr;
-          grid-template-rows: 1fr;
-
-          &__item {
-            text-align: left;
-
-            .divider {
-              display: none;
-            }
-          }
-
-          &__item:nth-child(2) {
-            border-inline: 1px solid var(--Gray);
-            padding-right: 5rem;
-            padding-left: 2rem;
-          }
-          &__item:nth-child(3) {
-            padding-right: 5rem;
-            padding-left: 2rem;
-          }
-        }
-
-        .section2__bar-progress {
-          margin-top: 2.5rem;
-        }
-      }
-
-      .section3 {
-        &__title {
-          font-size: 1.25em;
-          font-weight: 700h;
-        }
-
-        &__text{
-          width: 98%;
-          font-size: 1rem
-        }
-        &__card {
-          @include m.flex(row, wrap, space-between, baseline);
-          &__container-titles {
-            width: 100%;
-            @include m.flex(row, wrap, space-between, baseline);
-            margin-bottom: 1.5rem;
-            
-            
-
-            &__title {
-              font-size: 1em;
-              color: var(--Black);
-              font-weight: 700;
-            }
-
-            &__subtitle{
-              font-size: 1em;
-              font-weight: 500;
-            }
-          }
-
-          &__text {
-            width: 100%;
-            font-size: 1em;
-          }
-
-          &__price {
-            width: fit-content;
-            font-size: 2em;
-          }
-          a {
-            width: fit-content;
-          }
-        }
-      }
-      .modal {
-        width: calc(740px - 3rem);
-        top: 170px;
-        margin: 0 auto;
-        overflow-y: auto;
-        @include m.flex(row, wrap, space-between, center);
-
-        &__container-titles {
           &__title {
-            margin-bottom: 1rem;
-            font-size: 1.5em;
+            width: 50%;
+            text-align: left;
+            margin: 0;
+            margin-bottom: 3rem;
+          }
+          &__parraf {
+            width: 73%;
             font-weight: 700;
-          }
-          svg {
-            width: fit-content;
-          }
-        }
-
-        &__parraf {
-          margin-top: 0.5rem;
-          width: 100%;
-          text-align: left;
-          font-size:1em;
-        }
-
-        &__card {
-          position: relative;
-          &__container-select {
-            margin-block: 1.5rem 1.875rem;
-            @include m.flex(row, no-wrap, flex-start, center);
-            gap: 1rem;
-
-            input {
-              cursor: pointer;
-
-              &:checked {
-                background-color: var(--Moderate-cyan);
-                accent-color: var(--Moderate-cyan);
-              }
-            }
-
-            label {
-              color: var(--Black);
-              font-weight: 700;
-              line-height: 1.5rem;
-              cursor: pointer;
-              white-space: normal;
-
-              span {
-                color: var(--Moderate-cyan);
-                margin-left: 1rem;
-              }
-            }
-          }
-
-          &__text {
-            font-size: 1em;
+            text-align: left;
             line-height: 1.5rem;
-            margin-bottom: 2rem;
+            font-family: var(--font1);
+            color: var(--Very-dark-desaturated-blue);
           }
 
-          &__price {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            color: var(--Black);
-            font-weight: 700;
-            font-size: 1rem;
+          &__article {
+            text-align: left;
+            margin-top: 2rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            column-rule: var(--Very-dark-desaturated-blue);
+            font-family: var(--font2);
+            padding-bottom: 3.375rem;
+            position: relative;
+            
 
-            &--text {
-              color: var(--Dark-gray);
-              margin-left: 0.2rem;
-              font-weight: 300;
+            &::after {
+              content: "";
+              width: 130px;
+              height: 10px;
+              background-color: transparent;
+              border-radius: 50px;
+              position: absolute;
+              top: 12px;
+              left: -10px;
+              opacity: 0.3;
+            }
+          
+            &.yellow::after {
+              background-color: var(--Yellow);
+
+            }
+            &.pink::after {
+              background-color: var(--Soft-red);
+            }
+
+            
+          }
+        }
+
+        .section1__card--egg {
+          grid-row: 1/2;
+          grid-column: 2/3;
+          background-image: url(../images/mobile/image-transform.jpg);
+          background-size: cover;
+        }
+        .section1__card--wine {
+          grid-row: 2/3;
+          grid-column: 1/2;
+          background-image: url(../images/desktop/image-stand-out.jpg);
+          background-size: cover;
+          background-position: center;
+        }
+        .section1__card--frut {
+          &__wrap {
+            padding-top: 0;
+            text-align: center;
+
+            .wrap__title {
+              margin-top: 2.5rem;
+            }
+
+            .wrap__text {
+              width: 45%;
+              font-size: 0.875em;
+              font-family: var(--font1);
+              font-weight: normal;
+              margin-bottom: 3.125rem;
+              line-height: 1.5rem;
+              margin-inline: auto;
             }
           }
+        }
 
-          &__container-buttons {
-            @include m.flex(row, wrap, flex-start, center);
-            margin-inline: -1.5rem;
-            margin-top: 1.5rem;
-            padding: 2rem 1.5rem 1.5rem 1.5rem;
+        .cherry {
+          grid-row: 3/4;
+          grid-column: 1/2;
+          background-image: url(../images/desktop/image-graphic-design.jpg);
+        }
 
-            p {
-              width: 40%;
-              text-align: left;
-              margin-right: 5rem;
-              margin-bottom: 0;
+        .orange {
+          grid-row: 3/4;
+          grid-column: 2/3;
+          background-image: url(../images/desktop/image-photography.jpg);
+        }
+      }
+
+      &__section2 {
+         &__title {
+          margin-top: 9.8125rem;
+          font-size: 1.375em;
+          margin-bottom: 4.9375rem;  
+           
+        }
+
+        &__testimonials {
+          @include m.flex(row, no-wrap, flex-start, center);
+          .testimonial {
+            padding-inline: 2rem;
+            margin-bottom: 3.125rem;
+            .wrap-avatar {
+              width: 80px;
+              height: 80px;
+              border-radius: 50%;
+              margin-bottom: 2rem;
+
+              img {
+                border-radius: 50%;
+              }
             }
 
-            .input-num {
-              margin-right: 1.5rem;
+            &__description {
+              width: 80%;
+              line-height: 2rem;
+            }
 
-              &:focus {
-                outline: none;
+            &__author {
+              text-align: center;
+              margin-top: 4.375rem;
+              margin-bottom: 9.125rem;
+
+              &__name {
+                font-family: var(--font2);
+                font-weight: 900;
+                margin-bottom: 0.75rem;
+              }
+
+              &__job {
+                font-family: var(--font1);
+                color: var(--Very-dark-grayish-blue);
               }
             }
           }
         }
       }
 
-      .modal-success {
-        width: 551px;
-        height: 420px;
-        border-radius: 8px;
-        @include m.flex(column, no-wrap, flex-start, center);
-        position: absolute;
-        top: 120px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: 0 auto;
+      &__section3 {
+        width: 100%;
+        height: 441px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
 
-        &__icon-check {
-          width: fit-content;
-          margin: 0 auto 1.6875rem auto;
+        .gallery {
+          background-position: center bottom;
+          background-repeat: no-repeat;
+          background-size: cover;
         }
 
-        &__title {
-          width: 100%;
-          font-size: 18px;
-          text-align: center;
-          font-weight: 700;
-          color: var(--Black);
-          margin-bottom: 1.75rem;
+        .milk {
+          background-image: url("../images/desktop/image-gallery-milkbottles.jpg");
         }
 
-        &__text {
-          width: 100%;
-          text-align: center;
-          font-size: 1em;
-          line-height: 2rem;
-          margin-bottom: 2rem;
-          padding-inline: 1rem;
+        .orange {
+          background-image: url("../images/desktop/image-gallery-orange.jpg");
         }
-      }
 
-      button{
-        margin-bottom: 0;
+        .cone {
+          background-image: url("../images/desktop/image-gallery-cone.jpg");
+        }
+
+        .sugar {
+          background-image: url("../images/mobile/image-gallery-sugar-cubes.jpg");
+        }
       }
     }
   }

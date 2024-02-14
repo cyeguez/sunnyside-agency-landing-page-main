@@ -4,6 +4,9 @@
 // Importando main
 @forward './component/main';
 
+// Importando footer
+@forward './component/footer';
+
 
 @use './base/reset';
 @use './base/var';
